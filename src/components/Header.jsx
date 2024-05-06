@@ -51,23 +51,30 @@ const Header = () => {
                 </Link>
             </div>
 
-            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl" type="button" id="iconeMenu" onClick={handleMenu}>
+            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl z-50" type="button" id="iconeMenu" onClick={handleMenu}>
                 <div className={`flex flex-col items-center justify-center relative h-[22px] ${(!toggleMenu) ? 'md:hidden' : ''}`}>
-                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out translate-y-2 rounded-md ${(toggleMenu) ? 'rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
-                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out rounded-md ${(toggleMenu) ? 'hidden' : ''}`} />
-                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out -translate-y-2 rounded-md ${(toggleMenu) ? '-rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
+                    <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out translate-y-2 rounded-md ${(toggleMenu) ? 'rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
+                    <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out rounded-md ${(toggleMenu) ? 'hidden' : ''}`} />
+                    <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out -translate-y-2 rounded-md ${(toggleMenu) ? '-rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
                 </div>
             </button>
 
             {/* OPTIONS RESPONSIVE*/}
-            <div className={`absolute ${(toggleMenu) ? "w-[190px] sm:w-[300px]" : "w-0"} md:hidden h-screen right-0 top-[85px] bg-backgroundDark transition-all duration-500 ease-in-out`}>
-                <ul className="flex flex-col w-full h-full gap-x-3 lg:gap-x-7 text-backgroundDark dark:text-headerItems font-medium items-center justify-center gap-y-10 pb-32 pt-9">
+            <div className={`absolute ${(toggleMenu) ? "w-[190px] sm:w-[300px]" : "w-0"} md:hidden h-screen right-0 top-0 z-40 bg-backgroundDark transition-all duration-500 ease-in-out`}>
+                <ul className="flex flex-col w-full h-full gap-x-3 lg:gap-x-7 text-headerItems font-medium items-center justify-center gap-y-10 pb-32 pt-9">
                     <HeaderItem name={"intro"} text={"Introdução"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"about"} text={"Sobre Mim"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"projects"} text={"Projetos"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"services"} text={"Serviços"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"skills"} text={"Skills"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"contact"} text={"Contato"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    {/* TOGGLE MODE AND LANGUAGE */}
+                    <div className="relative">
+                        <button className="size-7" onClick={handleToggleTheme}>
+                            <ToggleThemeDark className={`size-7 fill-backgroundLight ${theme === "dark" ? "visible top-0" : "invisible -top-[20px]"} absolute transition-all duration-200 ease-linear hover:drop-shadow-white ${(!toggleMenu) ? 'hidden' : 'flex'}`}/> 
+                            <ToggleThemeLight className={`size-7 fill-backgroundLight ${theme === "light" ? "visible top-0" : "invisible top-[20px]"} absolute transition-all duration-100 ease-linear hover:drop-shadow-white ${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                        </button>
+                    </div>
                 </ul>
             </div>
 
