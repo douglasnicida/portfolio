@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       dropShadow: {
-        logo: "3px 3px 0px #FE3140"
+        logo: "3px 3px 0px #FE3140",
+        white: "0px 0px 3px #FFFFFF",
+        gray: "0px 0px 2px #131313",
       }
     },
     colors: {

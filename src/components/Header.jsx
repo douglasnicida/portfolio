@@ -8,6 +8,7 @@ import { Link } from "react-scroll";
 
 const Header = () => {
     const [theme, setTheme] = useState("dark");
+    const [toggleMenu, setToggleMenu] = useState(false);
 
     // useEffect(() => {
     //     (window.matchMedia('(prefers-color-scheme: dark)').matches) ? setTheme("dark") : setTheme("light")
@@ -25,18 +26,24 @@ const Header = () => {
         setTheme(theme === "light" ? "dark" : "light")
     }
 
+    const handleMenu = () => {
+        setToggleMenu(!toggleMenu)
+    }
+
     const HeaderItem = ({name, text, className}) => {
         return(
-            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative ${className}`}>
-                {/* <span className="absolute -top-0 left-0 w-0 h-[0.5px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span> */}
-                <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne">{text}</Link>
+            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[83px] text-center ${className}`}>
+                {/* <span className="absolute -top-0 right-0 w-0 h-[2px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span> */}
+                <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne hover:font-bold">
+                    {text}
+                </Link>
                 <span className="absolute -bottom-0 left-0 w-0 h-[3px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span>
             </li>
         );
     }
 
     return ( 
-        <div className="flex w-full h-[143px] justify-between items-center px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed">
+        <div className="flex w-full h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed">
             {/* LOGO */}
             <div className="hover:rotate-[7deg] hover:scale-110 transition-all duration-300 ease-in-out">
                 <Link to="intro" className="font-passionOne text-[40px] -tracking-[5px] drop-shadow-logo cursor-pointer" spy={true} smooth={true} offset={-50} duration={500}>
@@ -44,9 +51,29 @@ const Header = () => {
                 </Link>
             </div>
 
+            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl" type="button" id="iconeMenu" onClick={handleMenu}>
+                <div className={`flex flex-col items-center justify-center relative h-[22px] ${(!toggleMenu) ? 'md:hidden' : ''}`}>
+                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out translate-y-2 rounded-md ${(toggleMenu) ? 'rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
+                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out rounded-md ${(toggleMenu) ? 'hidden' : ''}`} />
+                    <div className={`absolute w-[30px] h-[3px] bg-white transition-all duration-500 ease-in-out -translate-y-2 rounded-md ${(toggleMenu) ? '-rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
+                </div>
+            </button>
+
+            {/* OPTIONS RESPONSIVE*/}
+            <div className={`absolute ${(toggleMenu) ? "w-[190px] sm:w-[300px]" : "w-0"} md:hidden h-screen right-0 top-[85px] bg-backgroundDark transition-all duration-500 ease-in-out`}>
+                <ul className="flex flex-col w-full h-full gap-x-3 lg:gap-x-7 text-backgroundDark dark:text-headerItems font-medium items-center justify-center gap-y-10 pb-32 pt-9">
+                    <HeaderItem name={"intro"} text={"Introdução"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"about"} text={"Sobre Mim"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"projects"} text={"Projetos"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"services"} text={"Serviços"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"skills"} text={"Skills"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"contact"} text={"Contato"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                </ul>
+            </div>
+
             {/* OPTIONS */}
-            <div className="">
-                <ul className="flex w-full h-fit gap-x-7 text-backgroundDark dark:text-headerItems font-medium">
+            <div className="hidden md:block">
+                <ul className="flex w-full h-fit gap-x-3 lg:gap-x-7 text-backgroundDark dark:text-headerItems font-medium">
                     <HeaderItem name={"intro"} text={"Introdução"}/>
                     <HeaderItem name={"about"} text={"Sobre Mim"}/>
                     <HeaderItem name={"projects"} text={"Projetos"}/>
@@ -57,10 +84,10 @@ const Header = () => {
             </div>
 
             {/* TOGGLE MODE AND LANGUAGE */}
-            <div className="relative">
+            <div className="relative hidden md:block">
                 <button className="size-7" onClick={handleToggleTheme}>
-                    <ToggleThemeDark className={`size-7 fill-backgroundLight ${theme === "dark" ? "visible top-0" : "invisible top-[20px]"} absolute transition-all duration-200 ease-linear`}/> 
-                    <ToggleThemeLight className={`size-7 fill-backgroundDark ${theme === "light" ? "visible top-0" : "invisible -top-[20px]"} absolute transition-all duration-200 ease-linear`}/>
+                    <ToggleThemeDark className={`size-7 fill-backgroundLight ${theme === "dark" ? "visible top-0" : "invisible -top-[20px]"} absolute transition-all duration-200 ease-linear hover:drop-shadow-white`}/> 
+                    <ToggleThemeLight className={`size-7 fill-backgroundDark ${theme === "light" ? "visible top-0" : "invisible top-[20px]"} absolute transition-all duration-100 ease-linear hover:drop-shadow-gray`}/>
                 </button>
             </div>
         </div>
