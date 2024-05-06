@@ -43,7 +43,7 @@ const Header = () => {
     }
 
     return ( 
-        <div className="flex w-full h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed">
+        <div className="flex w-full h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed z-50">
             {/* LOGO */}
             <div className="hover:rotate-[7deg] hover:scale-110 transition-all duration-300 ease-in-out">
                 <Link to="intro" className="font-passionOne text-[40px] -tracking-[5px] drop-shadow-logo cursor-pointer" spy={true} smooth={true} offset={-50} duration={500}>

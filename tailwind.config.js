@@ -19,15 +19,24 @@ module.exports = {
       myRed: "#FE3140",
       secondaryTextDark: "#A7A7A7",
       headerItems: "#D9D9D9",
+      introDetails: "#868686",
 
       transparent: "transparent",
       black: "black",
-      white: "white"
+      white: "white",
+      neutral: "neutral",
+      sky: "#4c4cff",
+      github: "#8806CE"
     },
 
     fontFamily: {
       'oxanium': ['Oxanium', 'sans-serif'],
       'passionOne': ['Passion One', 'sans-serif']
+    },
+
+    padding: {
+      layout: "0 100px",
+      responsiveLayout: "0 40px"
     }
   },
   plugins: [],
