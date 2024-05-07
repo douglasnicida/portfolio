@@ -25,7 +25,7 @@ module.exports = {
       black: "black",
       white: "white",
       neutral: "neutral",
-      sky: "#4c4cff",
+      sky: "#4361EE",
       github: "#8806CE"
     },
 
