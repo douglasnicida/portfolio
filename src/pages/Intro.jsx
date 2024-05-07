@@ -6,7 +6,7 @@ import {ReactComponent as Mouse} from "../assets/mouse.svg"
 import { useState } from "react";
 
 const Intro = () => {
-    const [alternate, setAlternate] = useState(false)
+    const [alternate, setAlternate] = useState(false);
 
     // RANDOM REVEAL JAPANESE CHARACTERS ANIMATION
     const JapaneseRandomReveal = ({text, className, replayActive}) => {
@@ -27,7 +27,7 @@ const Intro = () => {
     };
 
     return ( 
-        <div className="flex flex-col relative h-[calc(100vh)] p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="intro">
+        <div className="flex flex-col relative h-[100vh] p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="intro">
             
             {/* MAIN CONTENT */}
             <div className="flex flex-col relative xl:-mt-12">
@@ -68,11 +68,11 @@ const Intro = () => {
                         <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
 
                         <a href="https://github.com/douglasnicida" target="_blank" rel="noopener noreferrer">
-                            <Github className="size-7 lg:size-8 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
+                            <Github className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
                         </a>
 
                         <a href="https://www.linkedin.com/in/douglasnicida/" target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="size-7 lg:size-8 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
+                            <Linkedin className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
                         </a>
                     </div>
                 </div>
