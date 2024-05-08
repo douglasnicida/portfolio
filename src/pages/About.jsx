@@ -52,7 +52,7 @@ const About = () => {
 
             {/* DOWNLOAD CV BUTTON */}
             <Button classNameIn="bg-myRed hover:bg-myRedHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] " 
-                    classNameOut={"mt-9 md:mt-5"} text={"Download CV"}/>
+                    classNameOut={"mt-12 sm:mt-5"} text={"Download CV"}/>
 
             {/* SECTION DECORATION */}
             <div className="hidden sm:flex absolute left-0 bottom-20 md:bottom-10">

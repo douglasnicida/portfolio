@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Intro from "./pages/Intro";
 import About from "./pages/About";
+import Services from "./pages/Services";
 
 function App() {
   
@@ -9,6 +10,8 @@ function App() {
       <Header />
       <Intro />
       <About />
+      {/* <Projects /> */}
+      <Services />
     </div>
   );
 }
