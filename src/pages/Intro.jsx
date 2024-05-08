@@ -16,7 +16,7 @@ const Intro = () => {
             speed: 0.5,
             tick: 2,
             seed: 5,
-            onAnimationEnd: () => {setTimeout(()=>{setAlternate(!alternate)}, 5000)}
+            onAnimationEnd: () => {setTimeout(()=>{setAlternate(!alternate)}, 4000)}
         });
 
         let res;
@@ -27,35 +27,35 @@ const Intro = () => {
     };
 
     return ( 
-        <div className="flex flex-col relative h-[100vh] p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="intro">
+        <div className="flex flex-col relative h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="intro">
             
             {/* MAIN CONTENT */}
-            <div className="flex flex-col relative xl:-mt-12">
+            <div className="flex flex-col relative -mt-12">
                 
                 <JapaneseRandomReveal text={"Douglas Nicida"} className={"text-myRed text-md lg:text-2xl uppercase tracking-widest w-fit"} replayActive={true}/>
                 
                 <div className="flex flex-col relative mt-5">
                     {/* UPPER */}
-                    <div className="flex h-auto mb-7 md:mb-9 lg:mb-16">
-                        <JapaneseRandomReveal text={"Dev Web"} className={"uppercase text-5xl sm:text-6xl lg:text-8xl font-bold"} replayActive={false}/>
+                    <div className="flex h-auto mb-10 md:mb-9 lg:mb-16">
+                        <JapaneseRandomReveal text={"Dev Web"} className={"uppercase text-4xl sm:text-6xl lg:text-8xl font-bold"} replayActive={false}/>
                         
-                        <div className="rotate-[90deg] ml-[44px] lg:ml-11 md:-mt-3 lg:mt-0">
+                        <div className="rotate-[90deg] ml-[16px] md:ml-[44px] lg:ml-11 mt-2 md:-mt-3 lg:mt-0">
                             <div className="bg-introDetails h-[7px] w-[40px] md:w-[60px] lg:w-[80px]"></div>
-                            <div className="bg-introDetails h-[80px] md:h-[120px] lg:h-[140px] w-[7px] lg:w-[7px]"></div>
+                            <div className="bg-introDetails h-[40px] md:h-[120px] lg:h-[140px] w-[7px] lg:w-[7px]"></div>
                         </div>
                     </div>
                     
                     {/* BOTTOM */}
-                    <div className="flex h-auto ml-12 lg:ml-16 -mt-12 md:-mt-16 lg:-mt-20">
-                        <div className="rotate-[270deg] -mt-12 md:-mt-16">
+                    <div className="flex h-auto ml-8 sm:ml-10 md:ml-12 lg:ml-16 -mt-8 md:-mt-16 lg:-mt-20">
+                        <div className="rotate-[270deg] -mt-[38px] md:-mt-16">
                             <div className="bg-introDetails h-[7px] lg:h-[7px] w-[40px] md:w-[60px] lg:w-[80px]"></div>
-                            <div className="bg-introDetails h-[80px] md:h-[120px] lg:h-[140px] w-[7px] lg:w-[7px]"></div>
+                            <div className="bg-introDetails h-[40px] md:h-[120px] lg:h-[140px] w-[7px] lg:w-[7px]"></div>
                         </div>
 
                         {(alternate === false) ? 
-                            <JapaneseRandomReveal text={"FULLSTACK"} className={"uppercase text-5xl sm:text-6xl lg:text-8xl font-bold ml-10 w-fit"} replayActive={false}/>
+                            <JapaneseRandomReveal text={"FULLSTACK"} className={"uppercase text-4xl sm:text-6xl lg:text-8xl font-bold md:ml-10 w-fit"} replayActive={false}/>
                             :
-                            <JapaneseRandomReveal text={"DESIGNER"} className={"uppercase text-5xl sm:text-6xl lg:text-8xl font-bold ml-10 w-fit"} replayActive={false}/>
+                            <JapaneseRandomReveal text={"DESIGNER"} className={"uppercase text-4xl sm:text-6xl lg:text-8xl font-bold md:ml-10 w-fit"} replayActive={false}/>
                         }
                     </div>
                 </div>
@@ -78,7 +78,7 @@ const Intro = () => {
                 </div>
 
                 {/* SCROLL ICON */}
-                <Mouse className="absolute animate-bounce bottom-14 dark:stroke-backgroundLight stroke-backgroundDark"/>
+                <Mouse className="absolute animate-bounce bottom-20 md:bottom-14 dark:stroke-backgroundLight stroke-backgroundDark"/>
 
         </div>
      );

@@ -43,7 +43,7 @@ const Header = () => {
     }
 
     return ( 
-        <div className="flex w-full h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed z-50">
+        <div className="flex w-screen h-[73px] md:h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed z-50">
             {/* LOGO */}
             <div className="hover:rotate-[7deg] hover:scale-110 transition-all duration-300 ease-in-out">
                 <Link to="intro" className="font-passionOne text-[40px] -tracking-[5px] drop-shadow-logo cursor-pointer" spy={true} smooth={true} offset={-50} duration={500}>
@@ -52,7 +52,7 @@ const Header = () => {
             </div>
 
             {/* MENU ICON */}
-            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl z-50" type="button" id="iconeMenu" onClick={handleMenu}>
+            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl mr-4 z-50" type="button" id="iconeMenu" onClick={handleMenu}>
                 <div className={`flex flex-col items-center justify-center relative h-[22px] ${(!toggleMenu) ? 'md:hidden' : ''}`}>
                     <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out translate-y-2 rounded-md ${(toggleMenu) ? 'rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
                     <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out rounded-md ${(toggleMenu) ? 'hidden' : ''}`} />
