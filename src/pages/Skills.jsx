@@ -20,26 +20,19 @@ const Skills = () => {
 
     const [skillName, setSkillName] = useState(name);
     const [skillDescription, setSkillDescription] = useState(desc);
-    const [skillDataSet , setSkillDataSet] = useState([]);
+    const [skillDataSet , setSkillDataSet] = useState(skills);
     const [filterOption, setFilterOption] = useState(null);
 
     const [toggleMenu, setToggleMenu] = useState(false);
 
-
-    useEffect(() => {
-        setSkillDataSet(skills)
-    }, [])
-
-    useEffect(() => { setSkillDataSet(skills); setToggleMenu(!toggleMenu);}, [])
-
-    const handleFilter = () => {
-        console.log(filterOption)
-        setSkillDataSet(skills.filter(skill => skill.category === filterOption))
+    const handleFilter = (text) => {
+        setSkillDataSet(skills.filter(skill => skill.category === text))
     }
+    
 
     const MenuItem = ({text, className}) => {
         return(
-            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[75px] h-[22px] text-center ${className}`} onClick={() => {setFilterOption(text); handleFilter()}}>
+            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[75px] h-[22px] text-center ${className}`} onClick={() => {handleFilter(text)}}>
                 <button className="cursor-pointer font-Syne hover:font-bold text-[17px] capitalize">
                     {text}
                 </button>
