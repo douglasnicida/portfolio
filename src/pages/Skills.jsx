@@ -6,7 +6,7 @@ import {ReactComponent as Filter} from "../assets/Filter.svg"
 const SkillItem = ({icon, handleHover}) => {
     return (
         <div className="size-[57px] md:size-[72px] p-[1px] flex bg-gradient-to-b dark:bg-gradient-to-t from-[#000000] from-[35%] dark:to-[#5a5a5a] to-[#9e9e9e] hover:scale-110 transition-all duration-300 ease-in-out" 
-        onClick={handleHover}>
+        onMouseOver={handleHover}>
             <div className="size-full dark:bg-containerDark bg-white flex justify-center items-center">
                 {icon}
             </div>
@@ -21,7 +21,6 @@ const Skills = () => {
     const [skillName, setSkillName] = useState(name);
     const [skillDescription, setSkillDescription] = useState(desc);
     const [skillDataSet , setSkillDataSet] = useState(skills);
-    const [filterOption, setFilterOption] = useState(null);
 
     const [toggleMenu, setToggleMenu] = useState(false);
 
