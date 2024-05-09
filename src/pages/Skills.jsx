@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { skills } from "../utils/content";
 
+import {ReactComponent as Filter} from "../assets/Filter.svg"
+
 const SkillItem = ({icon, handleHover}) => {
     return (
-        <div className="size-[72px] p-[1px] flex bg-gradient-to-b dark:bg-gradient-to-t from-[#000000] from-[35%] dark:to-[#5a5a5a] to-[#9e9e9e] hover:scale-110 transition-all duration-300 ease-in-out" 
-        onMouseOver={handleHover}>
+        <div className="size-[57px] md:size-[72px] p-[1px] flex bg-gradient-to-b dark:bg-gradient-to-t from-[#000000] from-[35%] dark:to-[#5a5a5a] to-[#9e9e9e] hover:scale-110 transition-all duration-300 ease-in-out" 
+        onClick={handleHover}>
             <div className="size-full dark:bg-containerDark bg-white flex justify-center items-center">
                 {icon}
             </div>
@@ -19,19 +21,36 @@ const Skills = () => {
     const [skillName, setSkillName] = useState(name);
     const [skillDescription, setSkillDescription] = useState(desc);
     const [skillDataSet , setSkillDataSet] = useState([]);
+    const [filterOption, setFilterOption] = useState(null);
+
+    const [toggleMenu, setToggleMenu] = useState(false);
 
 
     useEffect(() => {
         setSkillDataSet(skills)
-
     }, [])
 
+    useEffect(() => { setSkillDataSet(skills); setToggleMenu(!toggleMenu);}, [])
+
     const handleFilter = () => {
-        setSkillDataSet(skillDataSet.filter(skill => skill.category === "frontend"))
+        console.log(filterOption)
+        setSkillDataSet(skills.filter(skill => skill.category === filterOption))
+    }
+
+    const MenuItem = ({text, className}) => {
+        return(
+            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[75px] h-[22px] text-center ${className}`} onClick={() => {setFilterOption(text); handleFilter()}}>
+                <button className="cursor-pointer font-Syne hover:font-bold text-[17px] capitalize">
+                    {text}
+                </button>
+                <span className="absolute -bottom-0 left-0 w-0 h-[3px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span>
+            </li>
+        );
     }
 
     return ( 
-        <div className="flex flex-col relative h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
+    <div className="relative">
+        <div className="flex flex-col h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
             <h2 className="text-myRed text-[32px] mt-10">Skills</h2>
 
             <div className="flex w-full justify-center items-center gap-x-24 mt-8">
@@ -57,7 +76,7 @@ const Skills = () => {
                 </div>
 
                 {/* SKILL GRID */}
-                <div className="flex">
+                <div className="flex flex-col gap-y-5">
                     {/* SKILLS */}
                     <div className="grid grid-rows-4 grid-cols-4 gap-6">
                         {skillDataSet.map(skill => {
@@ -68,13 +87,36 @@ const Skills = () => {
                     </div>
 
                     {/* FILTER */}
-                    <div className="">
-                        <button onClick={handleFilter}>teste filtro</button>
+                    <div className="flex justify-center w-full items-center gap-x-5 h-[50px]">
+                        <div className="w-full h-[1px] bg-introDetails" />
+                        <button className={`p-[9px] rounded-full border-[2px] dark:border-containerLight border-containerDark relative flex justify-center items-center ${toggleMenu && "focus:p-[14px]"} hover:p-[14px] transition-all duration-300 ease-in-out`} 
+                        onClick={() => { setSkillDataSet(skills); setToggleMenu(!toggleMenu);}}>
+                            <Filter className="dark:stroke-containerLight stroke-containerDark" />
+
+                            {/* CIRCLE */}
+                            <div className="absolute -top-2 rotate-45 -right-2 dark:bg-backgroundDark bg-backgroundLight size-5" />
+                            <div className="absolute -bottom-2 rotate-45 -left-2 dark:bg-backgroundDark bg-backgroundLight size-5" />
+                        </button>
+                        <div className="w-full h-[1px] bg-introDetails" />
                     </div>
                 </div>
             </div>
+            
 
         </div>
+
+        {/* FILTER MENU */}
+        <div className="w-full h-fit flex justify-center items-center lg:justify-start">
+            <div className={`absolute ${(toggleMenu) ? "scale-100" : "lg:w-0 scale-0"} h-[50px] w-fit lg:w-[300px] lg:h-3/5 lg:left-[50px] bottom-[10%] px-[15px] py-[18px] lg:px-[0] lg:py-[0] lg:top-[25%] z-[60] bg-black transition-all duration-500 ease-in-out rounded-lg`}>
+                <ul className="flex lg:flex-col w-full h-full gap-x-3 lg:gap-x-7 text-headerItems font-medium items-center justify-center gap-y-10 lg:pb-32 lg:pt-9 lg:mt-0 mt-1">
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="frontend" />
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="backend" />
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="tools" />
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="other" />
+                </ul>
+            </div>
+        </div>
+    </div>
      );
 }
  

@@ -17,7 +17,7 @@ module.exports = {
       backgroundImage: {
         me: "url('/src/assets/me.png')",
         meAI: "url('/src/assets/meAI.png')",
-      }
+      },
     },
     colors: {
       backgroundDark: "#131313",
