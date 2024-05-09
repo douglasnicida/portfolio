@@ -10,7 +10,8 @@ module.exports = {
         logo: "3px 3px 0px #FE3140",
         white: "0px 0px 3px #FFFFFF",
         gray: "0px 0px 2px #131313",
-        subtitle: "0px 3px 8px rgb(0 0 0 / 0.24)" 
+        subtitle: "0px 3px 8px rgb(0 0 0 / 0.24)",
+        image: "0px 0px 6px rgb(0 0 0 / 0.54)"
       },
 
       backgroundImage: {

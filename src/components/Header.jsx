@@ -32,9 +32,9 @@ const Header = () => {
 
     const HeaderItem = ({name, text, className}) => {
         return(
-            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[83px] text-center ${className}`}>
+            <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[87px] text-center ${className}`}>
                 {/* <span className="absolute -top-0 right-0 w-0 h-[2px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span> */}
-                <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne hover:font-bold">
+                <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne hover:font-bold text-[17px]">
                     {text}
                 </Link>
                 <span className="absolute -bottom-0 left-0 w-0 h-[3px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span>
@@ -64,7 +64,7 @@ const Header = () => {
             <div className={`absolute ${(toggleMenu) ? "w-[190px] sm:w-[300px]" : "w-0"} md:hidden h-screen right-0 top-0 z-40 bg-black transition-all duration-500 ease-in-out`}>
                 <ul className="flex flex-col w-full h-full gap-x-3 lg:gap-x-7 text-headerItems font-medium items-center justify-center gap-y-10 pb-32 pt-9">
                     <HeaderItem name={"intro"} text={"Introdução"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
-                    <HeaderItem name={"about"} text={"Sobre Mim"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
+                    <HeaderItem name={"about"} text={"Sobre mim"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"projects"} text={"Projetos"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"services"} text={"Serviços"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
                     <HeaderItem name={"skills"} text={"Skills"} className={`${(!toggleMenu) ? 'hidden' : 'flex'}`}/>
@@ -83,7 +83,7 @@ const Header = () => {
             <div className="hidden md:block">
                 <ul className="flex w-full h-fit gap-x-3 lg:gap-x-7 text-backgroundDark dark:text-headerItems font-medium">
                     <HeaderItem name={"intro"} text={"Introdução"}/>
-                    <HeaderItem name={"about"} text={"Sobre Mim"}/>
+                    <HeaderItem name={"about"} text={"Sobre mim"}/>
                     <HeaderItem name={"projects"} text={"Projetos"}/>
                     <HeaderItem name={"services"} text={"Serviços"}/>
                     <HeaderItem name={"skills"} text={"Skills"}/>
