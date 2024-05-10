@@ -26,10 +26,6 @@ const Header = () => {
         setTheme(theme === "light" ? "dark" : "light")
     }
 
-    const handleMenu = () => {
-        
-    }
-
     const HeaderItem = ({name, text, className}) => {
         return(
             <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[87px] text-center ${className}`}>
@@ -52,7 +48,8 @@ const Header = () => {
             </div>
 
             {/* MENU ICON */}
-            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl mr-4 z-50" type="button" id="iconeMenu" onClick={() => {setToggleMenu(!toggleMenu)}}>
+            <button className="flex md:hidden flex-col justify-around gap-y-[5px] text-backgroundDark dark:text-white text-3xl mr-4 z-50" type="button" id="iconeMenu"
+                    onClick={() => {setToggleMenu(!toggleMenu)}}>
                 <div className={`flex flex-col items-center justify-center relative h-[22px] ${(!toggleMenu) ? 'md:hidden' : ''}`}>
                     <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out translate-y-2 rounded-md ${(toggleMenu) ? 'rotate-45 translate-x-1 translate-y-[1px]' : ''}`} />
                     <div className={`absolute w-[30px] h-[3px] ${toggleMenu ? "bg-white" : "bg-backgroundDark"} dark:bg-white transition-all duration-500 ease-in-out rounded-md ${(toggleMenu) ? 'hidden' : ''}`} />

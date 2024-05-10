@@ -2,8 +2,7 @@ import { useScramble } from "use-scramble";
 import Container from "../components/Container";
 import Button from "../components/Button";
 
-
-
+import cv from '../assets/Currículo - Douglas Nicida.pdf';
 const About = () => {
 
     const JapaneseRandomReveal = ({text, className, replayActive}) => {
@@ -21,6 +20,17 @@ const About = () => {
       
         return res
     };
+
+    function downloadFile(){
+        const href = cv;
+
+        const a = document.createElement("a");
+        a.href = href;
+        a.download = "DouglasNicidaCV.pdf";
+
+        document.body.appendChild(a);
+        a.click();
+    }
 
     const content = <div className="flex flex-col xl:flex-row w-fit h-full gap-y-7 lg:gap-x-10 md:gap-y-0 md:items-center lg:items-start">
             {/* PICTURE */}
@@ -52,7 +62,7 @@ const About = () => {
 
             {/* DOWNLOAD CV BUTTON */}
             <Button classNameIn="bg-myRed hover:bg-myRedHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] " 
-                    classNameOut={"mt-12 sm:mt-8"} text={"Download CV"}/>
+                    classNameOut={"mt-12 sm:mt-8"} text={"Download CV"} onClick={downloadFile}/>
 
             {/* SECTION DECORATION */}
             <div className="hidden sm:flex absolute left-0 bottom-20 md:bottom-10">

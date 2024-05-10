@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { skills } from "../utils/content";
 
 import {ReactComponent as Filter} from "../assets/Filter.svg"

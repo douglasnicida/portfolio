@@ -13,7 +13,7 @@ const Services = () => {
             {/* SERVICES */}
             <div className="grid md:px-[64px] lg:px-[0px] md:grid-cols-1 lg:md:grid-cols-2 md:gap-y-4 xl:grid-cols-3 xl:grid-rows-1 lg:gap-x-20 lg:w-fit xl:w-fit w-fit">
                 {items.map(item => {
-                    const content = <div className="flex flex-col gap-y-3" key={item.key}>
+                    const content = <div className="flex flex-col gap-y-3">
                         {item.icon}
                         <h3 className="font-bold text-[20px]">{item.title}</h3>
                         <p className="dark:text-secondaryTextDark text-backgroundDark sm:text-justify">{item.text}</p>
@@ -21,7 +21,7 @@ const Services = () => {
                     
                     count++;
 
-                    return <Container children={content} className={`${count%2 === 1 ? "place-self-center sm:place-self-start" : "place-self-center sm:place-self-end"} lg:place-self-center`}/>
+                    return <Container key={item.key} children={content} className={`${count%2 === 1 ? "place-self-center sm:place-self-start" : "place-self-center sm:place-self-end"} lg:place-self-center`}/>
                 })}
             </div>
 
