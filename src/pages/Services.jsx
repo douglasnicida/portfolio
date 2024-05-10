@@ -6,7 +6,7 @@ const Services = () => {
     let count = 0;
 
     return ( 
-        <div className="flex flex-col relative h-[170vh] lg:h-[140vh] xl:h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="services">
+        <div className="flex flex-col relative h-[170vh] lg:h-[140vh] xl:h-[85vh] sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="services">
             {/* SECTION TITLE */}
             <h2 className="text-myRed text-[32px]">Serviços</h2>
             
@@ -26,7 +26,7 @@ const Services = () => {
             </div>
 
             {/* SECTION DECORATION */}
-            <div className="hidden sm:flex absolute left-0 bottom-20">
+            <div className="hidden sm:flex absolute left-0 bottom-10">
                 <div className="flex flex-col gap-y-3">
                     <div className="w-10 h-[2px] dark:bg-introDetails bg-backgroundDark" />
                     <div className="w-20 h-[2px] dark:bg-introDetails bg-backgroundDark" />

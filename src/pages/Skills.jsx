@@ -42,7 +42,7 @@ const Skills = () => {
 
     return ( 
     <div className="relative">
-        <div className="flex flex-col h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
+        <div className="flex flex-col h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
             <h2 className="text-myRed text-[32px] mt-10">Skills</h2>
 
             <div className="flex w-full justify-center items-center gap-x-24 mt-8">

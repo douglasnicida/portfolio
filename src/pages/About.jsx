@@ -44,7 +44,7 @@ const About = () => {
                 </div>
 
     return ( 
-        <div className="flex flex-col relative min-h-[100vh] h-auto w-full md:w-full sm:p-responsiveLayout md:p-layout items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10">
+        <div className="flex flex-col relative min-h-[100vh] h-auto w-full md:w-full sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10">
             {/* CONTENT */}
             <div className="mt-5 md:mt-20" id="about">
                 <Container isAbout={true} children={content}/>
