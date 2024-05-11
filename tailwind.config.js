@@ -35,7 +35,8 @@ module.exports = {
       white: "white",
       neutral: "neutral",
       sky: "#4361EE",
-      github: "#8806CE",
+      github: "#66108F",
+      githubHover: "#4c1068",
       whatsapp: "rgba(37, 211, 102)",
       whatsappHover: "rgba(18, 140, 126)"
     },

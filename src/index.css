@@ -21,6 +21,13 @@ code {
     monospace;
 }
 
+@media (max-width: 600px) {
+    .model {
+      height: 400px;
+    }
+}
+
+
 ::-moz-selection { /* Code for Firefox */
   color: white;
   background: #FE3140;
