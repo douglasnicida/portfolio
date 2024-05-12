@@ -19,7 +19,7 @@ export const MotionDivToLeft = ({children, ...props}) => {
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0}}
-          exit={{ opacity: 0, x: 100 }}
+          exit={{ opacity: 0, x: 0 }}
           transition={{ duration: 0.3 }}
           {...props}
         >

@@ -92,10 +92,10 @@ const Projects = () => {
                             {/* Buttons */}
                                 <div className="flex flex-col md:flex-row gap-x-7 z-20 lg:w-fit lg:mt-20 w-full items-center justify-center">
 
-                                    <MotionDivItemsUp i={1}>
-                                        {!project.category.includes("backend") && <Button classNameIn="bg-myRed hover:bg-myRedHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] " 
-                                        classNameOut={"mt-12 sm:mt-8"} text={"Acessar"} href={project.urls[0]}/>}
-                                    </MotionDivItemsUp>
+                                    
+                                        {!project.category.includes("backend") && <MotionDivItemsUp i={1}><Button classNameIn="bg-myRed hover:bg-myRedHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] " 
+                                        classNameOut={"mt-12 sm:mt-8"} text={"Acessar"} href={project.urls[0]}/></MotionDivItemsUp>}
+                                    
                                     
                                     <MotionDivItemsUp i={2}>
                                         <Button classNameIn="bg-github hover:bg-githubHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] " 
@@ -171,7 +171,6 @@ const Projects = () => {
                             className="w-full lg:w-[650px] 2xl:w-[800px] md:h-full h-[350px] relative lg:absolute flex justify-center xl:right-20 right-0 z-10 overflow-y-hidden"
                             transition={{duration:1}}
                         >
-                            <div className="w-full lg:w-[650px] 2xl:w-[800px] md:h-full h-[350px] relative lg:absolute flex justify-center xl:right-20 right-0 z-10">
                                 <Canvas dpr={[1,2]} camera={{fov: 45}} className='bg-transparent'>
                                     <perspectiveCamera
                                         position={[0, 0, 1000]} // Posição da câmera (x, y, z)
@@ -187,7 +186,6 @@ const Projects = () => {
                                         </Stage>
                                     </PresentationControls>
                                 </Canvas>
-                            </div>
                         </MotionDivToLeft>
                     </div>
                 )
