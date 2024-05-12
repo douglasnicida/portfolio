@@ -59,16 +59,3 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #FE3140;
 }
-
-@keyframes preloader{
-    0% {
-      stroke-dashoffset: 4500;
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
-}
-
-#preloader {
-  animation: preloader 8s ease;
-}

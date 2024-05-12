@@ -17,7 +17,7 @@ const Container = ({isAbout, children, className}) => {
                 <div className={`absolute top-0 h-[3px] ${isAbout ? "w-[90px]" : "w-[40px]"} bg-[#868686] left-[0px]`}></div>
                 <div className={`absolute top-0 h-[3px] ${isAbout ? "w-[90px] left-[100px]" : "w-[40px] left-[50px]"} bg-[#868686]`}></div>
             </div>
-
+            
             <div className={`absolute ${isAbout ? "-bottom-[23px] -right-[28px] md:-bottom-[43px] md:-right-[48px]" : "-bottom-[23px] -right-[28px] md:-bottom-[16px] md:-right-[16px]"}`}>
                 <div className={`absolute bottom-0 w-[3px] ${isAbout ? "h-[455px]" : "h-[269px]"} bg-gradient-to-b from-[#131313] from-[10%] to-[#868686]`}></div>
                 <div className={`absolute bottom-0 h-[3px] ${isAbout ? "w-[90px]" : "w-[40px]"} bg-[#868686] right-[0px]`}></div>

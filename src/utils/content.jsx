@@ -1,7 +1,7 @@
 import Development from '../assets/desenvolvimento_icon.svg?react'
 import Design from '../assets/design_icon.svg?react'
 import Backend from '../assets/banco_de_dados_icon.svg?react'
-;
+
 import ReactIcon  from '../assets/react.svg?react';
 import NodeJSIcon  from '../assets/Node.svg?react';
 import NestJSIcon  from '../assets/nestjs-svgrepo-com 1.svg?react';
@@ -137,13 +137,13 @@ export const skills = [
         icon: <JavascriptIcon className='size-[45px] md:size-[50px]' />,
         category: "frontend"
     },
-    // {
-    //     key: 15,
-    //     name: "Java",
-    //     description: "Java é uma linguagem de programação de propósito geral, concorrente, orientada a objetos, com forte segurança.",
-    //     icon: <JavaIcon className='size-[45px] md:size-[50px]' />,
-    //     category: "backend"
-    // },
+    {
+        key: 15,
+        name: "Java",
+        description: "Java é uma linguagem de programação de propósito geral, concorrente, orientada a objetos, com forte segurança.",
+        icon: <JavaIcon className='size-[45px] md:size-[50px] fill-myRed' />,
+        category: "backend"
+    },
     {
         key: 16,
         name: "Linux",

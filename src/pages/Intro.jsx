@@ -4,6 +4,7 @@ import Github from "../assets/github.svg?react"
 import Linkedin from "../assets/linkedin.svg?react"
 import Mouse from "../assets/mouse.svg?react"
 import { useState } from "react";
+import { MotionDivItemsLeft } from "../utils/motion";
 
 const Intro = () => {
     const [alternate, setAlternate] = useState(false);
@@ -65,15 +66,21 @@ const Intro = () => {
                 {/* SOCIAL MEDIA */}
                 <div className="sm:absolute mt-14 sm:mt-0 right-[0px] bottom-14 p-responsiveLayout xl:p-layout">
                     <div className="flex sm:flex-col items-center gap-x-4 sm:gap-y-7 sm:gap-x-0 relative">
-                        <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
-
-                        <a href="https://github.com/douglasnicida" target="_blank" rel="noopener noreferrer">
-                            <Github className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/douglasnicida/" target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
-                        </a>
+                        <MotionDivItemsLeft i={2}>
+                            <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
+                        </MotionDivItemsLeft>
+                        
+                        <MotionDivItemsLeft i={4}>
+                            <a href="https://github.com/douglasnicida" target="_blank" rel="noopener noreferrer">
+                                <Github className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
+                            </a>
+                        </MotionDivItemsLeft>
+                        
+                        <MotionDivItemsLeft i={6}>
+                            <a href="https://www.linkedin.com/in/douglasnicida/" target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
+                            </a>
+                        </MotionDivItemsLeft>
                     </div>
                 </div>
 

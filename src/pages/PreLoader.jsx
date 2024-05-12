@@ -3,7 +3,7 @@ import { useState } from "react";
 const PreLoader = () => {
     const [isHidden, setIsHidden] = useState(false);
 
-    setTimeout(() => {setIsHidden(true)},3000)
+    setTimeout(() => {setIsHidden(true)},2800)
 
     return ( 
         <div className={`${isHidden ? 'invisible scale-150 opacity-0' : 'visible scale-100 opacity-100'} fixed w-screen h-screen bg-backgroundDark z-50 flex justify-center items-center transition-all duration-300 ease-linear`}>

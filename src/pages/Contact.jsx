@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { toast } from 'react-toastify';
 import emailjs from '@emailjs/browser';
 
-import env from "react-dotenv";
+import { MotionDivItemsLeft, MotionDivItemsRight } from "../utils/motion";
 
 const Contact = () => {
     const [toggleModal, setToggleModal] = useState(false);
@@ -84,15 +84,21 @@ const Contact = () => {
         <div className="flex flex-col h-[700px] md:h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="contact">
             <div className={`flex flex-col md:flex-row w-full h-full md:justify-center items-center ${toggleModal ? "blur-md" : "blur-0"} transition-all duration-300 ease-linear`}>
                 <div className="flex flex-col h-1/3 w-[450px] sm:flex-row md:w-[780px] mb-16">
-                    <h2 className="text-myRed text-[32px] font-semibold tracking-wider mt-10 h-[60vh] w-full text-center sm:text-start">Vamos trabalhar <br/> juntos</h2>
+                    <MotionDivItemsRight className="text-myRed text-[32px] font-semibold tracking-wider mt-10 h-[60vh] w-full text-center sm:text-start">
+                        Vamos trabalhar <br/> juntos
+                    </MotionDivItemsRight>
                     <div className="flex flex-col h-full items-center w-full">
-                        <Button classNameIn="bg-whatsapp hover:bg-whatsappHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] w-full" 
-                                classNameOut={"mt-12 sm:mt-8 mb-8"} text={"Whatsapp"} href="https://wa.me/5511952404831"/>
-
-                        <h2 className="font-bold text-[23px] w-full text-center">ou</h2>
-
-                        <Button classNameIn="bg-backgroundDark hover:bg-black sm:hover:border-y-[7px] lg:hover:border-y-[9px] w-full" 
-                                classNameOut={"mt-8"} text={"E-mail"} onClick={() => {setToggleModal(true)}}/>
+                        <MotionDivItemsLeft i={2}>    
+                            <Button classNameIn="bg-whatsapp hover:bg-whatsappHover sm:hover:border-y-[7px] lg:hover:border-y-[9px] w-full" 
+                                    classNameOut={"mt-12 sm:mt-8 mb-8"} text={"Whatsapp"} href="https://wa.me/5511952404831"/>
+                        </MotionDivItemsLeft>
+                        <MotionDivItemsLeft i={4}>
+                            <h2 className="font-bold text-[23px] w-full text-center">ou</h2>
+                        </MotionDivItemsLeft>
+                        <MotionDivItemsLeft i={6}>
+                            <Button classNameIn="bg-backgroundDark hover:bg-black sm:hover:border-y-[7px] lg:hover:border-y-[9px] w-full" 
+                                    classNameOut={"mt-8"} text={"E-mail"} onClick={() => {setToggleModal(true)}}/>
+                        </MotionDivItemsLeft>
                     </div>
                 </div>
                 
@@ -109,20 +115,26 @@ const Contact = () => {
             {/* SOCIAL MEDIA */}
             <div className="absolute mt-8 lg:mt-48 md:right-[10px] md:p-responsiveLayout xl:p-layout bottom-40 sm:bottom-56 lg:bottom-24">
                 <div className="flex sm:flex-col items-center gap-x-4 sm:gap-y-7 sm:gap-x-0 relative">
-                    <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
-
-                    <a href="https://github.com/douglasnicida" target="_blank" rel="noopener noreferrer">
-                        <Github className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/douglasnicida/" target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
-                    </a>
+                    <MotionDivItemsLeft i={2}>
+                        <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
+                    </MotionDivItemsLeft>
+                    
+                    <MotionDivItemsLeft i={4}>
+                        <a href="https://github.com/douglasnicida" target="_blank" rel="noopener noreferrer">
+                            <Github className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-github hover:fill-github transition-all duration-300 ease-in-out" />
+                        </a>
+                    </MotionDivItemsLeft>
+                    
+                    <MotionDivItemsLeft i={6}>
+                        <a href="https://www.linkedin.com/in/douglasnicida/" target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="size-7 lg:size-8 xl:size-9 cursor-pointer dark:fill-backgroundLight fill-backgroundDark dark:hover:fill-sky hover:fill-sky transition-all duration-300 ease-in-out" />
+                        </a>
+                    </MotionDivItemsLeft>
                 </div>
             </div>
 
             {/* MODAL */}
-            <div className={`absolute md:w-1/2 bg-backgroundDark rounded-lg ${toggleModal ? "visible h-1/2" : "invisible h-0"} drop-shadow-image dark:drop-shadow-white transition-all duration-300 ease-in-out`}>
+            <div className={`absolute md:w-1/2 bg-backgroundDark rounded-lg ${toggleModal ? "visible h-[60%]" : "invisible h-0"} drop-shadow-image dark:drop-shadow-white transition-all duration-300 ease-in-out`}>
                 <div className={`flex flex-col w-full h-full ${toggleModal ? "p-[50px]" : "p-0"}`}>
                     {/* ClOSE ICON */}
                     <button className={`flex w-full h-[40px] text-backgroundDark dark:text-white text-3xl z-50 justify-end group ${toggleModal ? "flex" : "hidden"}`} type="button" 

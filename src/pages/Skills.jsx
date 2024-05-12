@@ -2,6 +2,7 @@ import { useState } from "react";
 import { skills } from "../utils/content";
 
 import Filter from "../assets/Filter.svg?react"
+import { MotionDivItemsDown, MotionDivToDown, MotionDivToRight } from "../utils/motion";
 
 const SkillItem = ({icon, handleHover}) => {
     return (
@@ -42,30 +43,34 @@ const Skills = () => {
 
     return ( 
     <div className="relative">
-        <div className="flex flex-col h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
-            <h2 className="text-myRed text-[32px] mt-10">Skills</h2>
+        <div className="flex flex-col h-[115vh] lg:h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="skills">
+            <MotionDivToDown>
+                <h2 className="text-myRed text-[32px] mt-10">Skills</h2>
+            </MotionDivToDown>
 
             <div className="flex w-full justify-center items-center gap-x-24 mt-8">
 
                 {/* SKILL INFO */}
-                <div className="relative size-[323px] gap-y-2 hidden lg:flex flex-col p-[8px]">
+                <MotionDivToRight className="hidden lg:flex">
+                    <div className="relative size-[323px] gap-y-2 hidden lg:flex flex-col p-[8px]">
 
-                    <h2 className="font-bold text-[20px] dark:text-backgroundLight text-black">{skillName}</h2>
-                    <p className="dark:text-secondaryTextDark text-containerDark text-justify">{skillDescription}</p>
+                        <h2 className="font-bold text-[20px] dark:text-backgroundLight text-black">{skillName}</h2>
+                        <p className="dark:text-secondaryTextDark text-containerDark text-justify">{skillDescription}</p>
 
-                    {/* DETAILS */}
-                    <div className={`absolute ${"-top-[23px] -left-[28px] md:-top-[16px] md:-left-[16px]"}`}>
-                        <div className={`absolute top-0 w-[3px] ${"h-[269px]"} bg-gradient-to-t from-[#131313] from-[10%] to-[#868686]`}></div>
-                        <div className={`absolute top-0 h-[3px] ${"w-[40px]"} bg-[#868686] left-[0px]`}></div>
-                        <div className={`absolute top-0 h-[3px] ${"w-[40px] left-[50px]"} bg-[#868686]`}></div>
+                        {/* DETAILS */}
+                        <div className={`absolute ${"-top-[23px] -left-[28px] md:-top-[16px] md:-left-[16px]"}`}>
+                            <div className={`absolute top-0 w-[3px] ${"h-[269px]"} bg-gradient-to-t from-[#131313] from-[10%] to-[#868686]`}></div>
+                            <div className={`absolute top-0 h-[3px] ${"w-[40px]"} bg-[#868686] left-[0px]`}></div>
+                            <div className={`absolute top-0 h-[3px] ${"w-[40px] left-[50px]"} bg-[#868686]`}></div>
+                        </div>
+
+                        <div className={`absolute ${"-bottom-[23px] -right-[28px] md:-bottom-[16px] md:-right-[16px]"}`}>
+                            <div className={`absolute bottom-0 w-[3px] ${"h-[269px]"} bg-gradient-to-b from-[#131313] from-[10%] to-[#868686]`}></div>
+                            <div className={`absolute bottom-0 h-[3px] ${"w-[40px]"} bg-[#868686] right-[0px]`}></div>
+                            <div className={`absolute bottom-0 h-[3px] ${"w-[40px] right-[50px]"} bg-[#868686]`}></div>
+                        </div>
                     </div>
-
-                    <div className={`absolute ${"-bottom-[23px] -right-[28px] md:-bottom-[16px] md:-right-[16px]"}`}>
-                        <div className={`absolute bottom-0 w-[3px] ${"h-[269px]"} bg-gradient-to-b from-[#131313] from-[10%] to-[#868686]`}></div>
-                        <div className={`absolute bottom-0 h-[3px] ${"w-[40px]"} bg-[#868686] right-[0px]`}></div>
-                        <div className={`absolute bottom-0 h-[3px] ${"w-[40px] right-[50px]"} bg-[#868686]`}></div>
-                    </div>
-                </div>
+                </MotionDivToRight>
 
                 {/* SKILL GRID */}
                 <div className="flex flex-col gap-y-5">
@@ -73,7 +78,9 @@ const Skills = () => {
                     <div className="grid grid-rows-4 grid-cols-4 gap-6">
                         {skillDataSet.map(skill => {
                             return (
-                                <SkillItem icon={skill.icon} key={skill.key} handleHover={() => {setSkillName(skill.name); setSkillDescription(skill.description);}}/>
+                                <MotionDivItemsDown i={skill.key} transition={{ duration: 0.2, delay: skill.key * 0.1}} key={skill.key}>
+                                    <SkillItem icon={skill.icon} key={skill.key} handleHover={() => {setSkillName(skill.name); setSkillDescription(skill.description);}}/>
+                                </MotionDivItemsDown>
                             )
                         })}
                     </div>
