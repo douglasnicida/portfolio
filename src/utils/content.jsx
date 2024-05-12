@@ -16,8 +16,27 @@ import PhotoshopIcon  from '../assets/photoshop-svgrepo-com (1) 1.svg?react';
 import HTML5Icon  from '../assets/html5-svgrepo-com.svg?react';
 import CSS3Icon  from '../assets/css-svgrepo-com.svg?react';
 import JavascriptIcon  from '../assets/JS.svg?react';
-// import { ReactComponent as JavaIcon } from '../assets/JavaIcon.svg';
+import JavaIcon from '../assets/Java.svg?react';
 import LinuxIcon  from '../assets/linux-svgrepo-com 1.svg?react';
+import SpringIcon from '../assets/SpringIcon.svg?react';
+
+export const React_Icon =  <ReactIcon className='size-[35px]' />
+export const NodeJS_Icon =  <NodeJSIcon className='size-[35px]' />
+export const NestJS_Icon =  <NestJSIcon className='size-[35px] fill-myRed' />
+export const TailWindCSS_Icon =  <TailWindCSSIcon className='size-[35px]' />
+export const Typescript_Icon =  <TypescriptIcon className='size-[35px]' />
+export const PrismaJS_Icon =  <PrismaJSIcon className='size-[35px]' />
+export const PostgreSQL_Icon =  <PostgreSQLIcon className='size-[35px]' />
+export const MySQL_Icon =  <MySQLIcon className='size-[35px]' />
+export const Github_Icon =  <GithubIcon className='size-[35px] fill-myRed' />
+export const Figma_Icon =  <FigmaIcon className='size-[35px]' />
+export const Photoshop_Icon =  <PhotoshopIcon className='size-[35px]' />
+export const HTML5_Icon =  <HTML5Icon className='size-[40px] fill-myRed'/>
+export const CSS3_Icon =  <CSS3Icon className='size-[35px] fill-myRed' />
+export const Javascript_Icon =  <JavascriptIcon className='size-[35px]' />
+export const Java_Icon =  <JavaIcon className='size-[35px] fill-myRed' />
+export const Spring_Icon =  <SpringIcon className='size-[35px] stroke-myRed fill-transparent' />
+
 
 export const skills = [
     {

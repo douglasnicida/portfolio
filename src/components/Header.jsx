@@ -4,7 +4,6 @@ import ToggleThemeDark from "../assets/moon.svg?react"
 import ToggleThemeLight from "../assets/sun.svg?react"
 import { Link } from "react-scroll";
 
-//TODO: BURGUER MENU (DEIXAR RESPONSIVO)
 
 const Header = () => {
     const [theme, setTheme] = useState("dark");
@@ -29,7 +28,6 @@ const Header = () => {
     const HeaderItem = ({name, text, className}) => {
         return(
             <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[87px] text-center ${className}`}>
-                {/* <span className="absolute -top-0 right-0 w-0 h-[2px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span> */}
                 <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne hover:font-bold text-[17px]">
                     {text}
                 </Link>
@@ -39,7 +37,7 @@ const Header = () => {
     }
 
     return ( 
-        <div className="flex w-screen h-[73px] md:h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed z-50">
+        <div className="flex w-screen h-[73px] md:h-[143px] justify-between items-center px-[40px] lg:gap-0 lg:px-[100px] dark:text-white dark:bg-backgroundDark bg-backgroundLight text-backgroundDark fixed z-40">
             {/* LOGO */}
             <div className="hover:rotate-[7deg] hover:scale-110 transition-all duration-300 ease-in-out">
                 <Link to="intro" className="font-passionOne text-[40px] -tracking-[5px] drop-shadow-logo cursor-pointer" spy={true} smooth={true} offset={-50} duration={500}>

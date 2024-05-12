@@ -81,7 +81,7 @@ const Contact = () => {
     }
 
     return ( 
-        <div className="flex flex-col h-[70vh] sm:h-[90vh] md:h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="contact">
+        <div className="flex flex-col h-[700px] md:h-[95vh] sm:p-responsiveLayout md:p-layout justify-center items-center relative text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" id="contact">
             <div className={`flex flex-col md:flex-row w-full h-full md:justify-center items-center ${toggleModal ? "blur-md" : "blur-0"} transition-all duration-300 ease-linear`}>
                 <div className="flex flex-col h-1/3 w-[450px] sm:flex-row md:w-[780px] mb-16">
                     <h2 className="text-myRed text-[32px] font-semibold tracking-wider mt-10 h-[60vh] w-full text-center sm:text-start">Vamos trabalhar <br/> juntos</h2>
@@ -97,7 +97,7 @@ const Contact = () => {
                 </div>
                 
                 {/* FOOTER */}
-                <div className="absolute bottom-56">
+                <div className="absolute bottom-24 sm:bottom-56 lg:bottom-24">
                     <div className="flex w-[450px] md:w-[780px] justify-center items-center gap-x-5">
                         <div className="w-[80px] lg:w-[210px] h-[1px] bg-introDetails md:flex hidden" />
                         <span className="w-max text-center text-[19px]">Copyright © 2024 - Douglas Nicida</span>
@@ -107,7 +107,7 @@ const Contact = () => {
             </div>
 
             {/* SOCIAL MEDIA */}
-            <div className="absolute sm:mt-0 lg:mt-48 md:right-[10px] md:p-responsiveLayout xl:p-layout">
+            <div className="absolute mt-8 lg:mt-48 md:right-[10px] md:p-responsiveLayout xl:p-layout bottom-40 sm:bottom-56 lg:bottom-24">
                 <div className="flex sm:flex-col items-center gap-x-4 sm:gap-y-7 sm:gap-x-0 relative">
                     <div className="w-[100px] h-[3px] sm:w-[3px] sm:h-[150px] lg:h-[200px] dark:bg-headerItems bg-black/40 transition-all duration-200 ease-in-out" />
 
