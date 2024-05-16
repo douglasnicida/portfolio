@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="flex flex-col w-full h-auto overflow-x-hidden relative">
-      <PreLoader />
+      {/* <PreLoader /> */}
       <Header />
       <ToastContainer autoClose={3000} theme={`${isDark ? "light" : "dark"}`}/>
       <Intro />

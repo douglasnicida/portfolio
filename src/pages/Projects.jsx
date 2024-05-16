@@ -1,28 +1,30 @@
-import { Canvas } from '@react-three/fiber';
-import { useGLTF, Stage, PresentationControls, OrbitControls } from "@react-three/drei"
-import { useEffect, useMemo } from 'react';
-import { Euler } from 'three';
+import MyFilmListImage from '../assets/myfilmlist.png'
+import OpenSeaImage from '../assets/openseaclonefullstack.png'
+import HBOMaxImage from '../assets/hbomaxclone.png'
+import CodeImage from '../assets/code.png'
 import Button from '../components/Button';
 import { React_Icon, TailWindCSS_Icon, CSS3_Icon, HTML5_Icon, Javascript_Icon, Java_Icon, Spring_Icon, NestJS_Icon } from '../utils/content';
 import { MotionDivItemsUp, MotionDivToLeft, MotionDivToRight, MotionDivToUp } from '../utils/motion';
 
-const initialRotationLaptop = new Euler(0, -Math.PI / 7, 0);
-const initialRotationPhone = new Euler(0, 2.7, 0);
+// const initialRotationLaptop = new Euler(0, -Math.PI / 7, 0);
+// const initialRotationPhone = new Euler(0, 2.7, 0);
 
-function Model1({laptopPath}) {
-    const {scene} = useGLTF(laptopPath);
 
-    const copiedScene = useMemo(() => scene.clone(),[scene])
+// function Model1({laptopPath}) {
+//     const {scene} = useGLTF(laptopPath);
 
-    return <primitive object={copiedScene} scale={0.0016} position={[0.0004, 0, 0]} rotation={initialRotationLaptop}/>
-  }
+//     // const copiedScene = useMemo(() => scene.clone(),[scene])
+
+//     return <primitive object={scene} scale={0.0016} position={[0.0004, 0, 0]} rotation={initialRotationLaptop}/>
+//   }
   
-function Model2({phonePath}) {
-    const {scene} = useGLTF(phonePath)
-    const copiedScene = useMemo(() => scene.clone(),[scene])
+// function Model2({phonePath}) {
+//     const {scene} = useGLTF(phonePath)
+//     // const copiedScene = useMemo(() => scene.clone(),[scene])
   
-    return <primitive object={copiedScene} scale={0.0017} position={[0.00069, 0.00015, -0.000035]} rotation={initialRotationPhone}/>
-}
+//     return <primitive object={scene} scale={0.0017} position={[0.00069, 0.00015, -0.000035]} rotation={initialRotationPhone}/>
+// }
+
 
 const Projects = () => {
 
@@ -33,7 +35,7 @@ const Projects = () => {
             description: "Projeto que te permite ver os detalhes dos filmes mais recentes e salvar em sua lista os favoritos.",
             tech: ["reactjs","tailwindcss","html5","css3", "javascript"],
             category: ["frontend"],
-            image: ["/laptop/project1/scene.gltf", "/phone/project1/scene.gltf"],
+            image: [MyFilmListImage],
             urls: ["https://myfilmslist.netlify.app", "https://github.com/douglasnicida/movie-details-list-project/"]
         },
         {
@@ -42,7 +44,7 @@ const Projects = () => {
             description: "Website clone da Opensea Mystical Wizard Guild Collection da MysticSwap.",
             tech: ["reactjs", "nestjs", "tailwindcss", "html5", "css3", "javascript"],
             category: ["frontend", "backend"],
-            image: ["/laptop/project2/scene.gltf", "/phone/project2/scene.gltf"],
+            image: [OpenSeaImage],
             urls: ["","https://github.com/douglasnicida/opensea_nft_collection_clone"]
         },
         {
@@ -51,7 +53,7 @@ const Projects = () => {
             description: "Clone do site da HBO MAX, realizado em janeiro de 2024. Totalmente responsivo, possui slider e muito mais!",
             tech: ["reactjs","tailwindcss","html5","css3","javascript"],
             category: ["frontend"],
-            image: ["/laptop/project3/scene.gltf", "/phone/project3/scene.gltf"],
+            image: [HBOMaxImage],
             urls: ["https://hb0maxclone.netlify.app", "https://github.com/douglasnicida/hbomax_clone"]
         },
         {
@@ -60,7 +62,7 @@ const Projects = () => {
             description: "Projeto realizado para trabalho da faculdade, uma API para aplicação de barbearias. Onde as barbearias podem divulgar seus serviços e os clientes podem agendar um serviço.",
             tech: ["java", "spring"],
             category: ["backend"],
-            image: ["/laptop/project4/scene.gltf", "/phone/project4/scene.gltf"],
+            image: [CodeImage],
             urls: ["", "https://github.com/douglasnicida/api_barbershop_springboot"]
         },
         {
@@ -69,17 +71,17 @@ const Projects = () => {
             description: "SECCOMP UNESP RC CHALLENGE WINNER- Projeto para gestão de lojas de calçados.",
             tech: ["java"],
             category: ["backend"],
-            image: ["/laptop/project5/scene.gltf", "/phone/project5/scene.gltf"],
+            image: [CodeImage],
             urls: ["", "https://github.com/douglasnicida/seccomp-unesp-challenge-magis5"]
         },
     ]
-
     return ( 
+
         <div id="projects">
             {projects.map(project => {
                 return (
                     <div className="flex flex-col-reverse lg:flex-row relative md:h-[125vh] lg:h-[100vh] sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10" key={project.key}>
-                        <div className="flex flex-col gap-y-7 w-full lg:justify-center relative bottom-10 md:bottom-20 lg:pl-[100px] lg:mt-20">
+                        <div className="flex flex-col gap-y-7 w-full lg:justify-center relative bottom-10 md:bottom-20 2xl:pl-[100px] lg:mt-20">
                             
                             {/* PROJECT DETAILS */}
                             <MotionDivToRight>
@@ -166,18 +168,26 @@ const Projects = () => {
 
                         </div>
 
-                        {/* 3D PROJECT PREVIEW */}
+                        {/* PROJECT PREVIEW */}
                         <MotionDivToLeft 
-                            className="w-full lg:w-[650px] 2xl:w-[800px] md:h-full h-[350px] relative lg:absolute flex justify-center xl:right-20 right-0 z-10 overflow-y-hidden"
+                            className="w-full lg:w-[700px] lg:h-[700px] xl:w-[800px] md:h-[600px] h-[350px] relative lg:absolute flex justify-center xl:right-20 right-0 z-10 overflow-y-hidden"
                             transition={{duration:1}}
                         >
-                                <Canvas dpr={[1,2]} camera={{fov: 45}} className='bg-transparent'>
+                            <img src={project.image[0]} alt={project.name}/>
+
+                            {/* 3D PROJECT PREVIEW */}
+                                {/* <Canvas dpr={[1,2]} camera={{fov: 45}} className='bg-transparent'>
                                     <perspectiveCamera
-                                        position={[0, 0, 1000]} // Posição da câmera (x, y, z)
+                                        position={[0, 0, 0]} // Posição da câmera (x, y, z)
                                         fov={75} // Campo de visão em graus
                                         near={0.1} // Distância próxima do plano de corte
                                         far={1000} // Distância longe do plano de corte
                                     />
+
+                                    <ambientLight />
+                                    <pointLight position={[5, 5, 5]} intensity={1} />
+                                    <pointLight position={[-3, -3, 2]} />
+                                    
                                     <OrbitControls rotateSpeed={0.5} maxPolarAngle={Math.PI * 0.6} minPolarAngle={1.5} enableZoom={false}/>
                                     <PresentationControls speed={0.6} global zoom={1} polar={[-0.1, Math.PI/4]}>
                                         <Stage intensity={0} environment={"warehouse"}>
@@ -185,7 +195,7 @@ const Projects = () => {
                                             <Model2 phonePath={project.image[1]}/> 
                                         </Stage>
                                     </PresentationControls>
-                                </Canvas>
+                                </Canvas> */}
                         </MotionDivToLeft>
                     </div>
                 )
