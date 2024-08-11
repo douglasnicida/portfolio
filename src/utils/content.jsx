@@ -19,6 +19,7 @@ import JavascriptIcon  from '../assets/JS.svg?react';
 import JavaIcon from '../assets/Java.svg?react';
 import LinuxIcon  from '../assets/linux-svgrepo-com 1.svg?react';
 import SpringIcon from '../assets/SpringIcon.svg?react';
+import NextJSIcon from '../assets/nextjs-icon-svgrepo-com.svg?react';
 
 export const React_Icon =  <ReactIcon className='size-[35px]' />
 export const NodeJS_Icon =  <NodeJSIcon className='size-[35px]' />
@@ -35,6 +36,7 @@ export const HTML5_Icon =  <HTML5Icon className='size-[40px] fill-myRed'/>
 export const CSS3_Icon =  <CSS3Icon className='size-[35px] fill-myRed' />
 export const Javascript_Icon =  <JavascriptIcon className='size-[35px]' />
 export const Java_Icon =  <JavaIcon className='size-[35px] fill-myRed' />
+export const NextJS_Icon =  <NextJSIcon className='size-[32px] fill-myRed' />
 export const Spring_Icon =  <SpringIcon className='size-[35px] stroke-myRed fill-transparent' />
 
 

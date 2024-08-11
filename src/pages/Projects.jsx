@@ -1,9 +1,10 @@
 import MyFilmListImage from '../assets/myfilmlist.png'
-import OpenSeaImage from '../assets/openseaclonefullstack.png'
 import HBOMaxImage from '../assets/hbomaxclone.png'
 import CodeImage from '../assets/code.png'
+import BarbershopImage from '../assets/yourbarber.png'
+import AppNimeImage from '../assets/appnime.png'
 import Button from '../components/Button';
-import { React_Icon, TailWindCSS_Icon, CSS3_Icon, HTML5_Icon, Javascript_Icon, Java_Icon, Spring_Icon, NestJS_Icon } from '../utils/content';
+import { React_Icon, TailWindCSS_Icon, CSS3_Icon, HTML5_Icon, Javascript_Icon, Java_Icon, Spring_Icon, NestJS_Icon, NextJS_Icon, Typescript_Icon } from '../utils/content';
 import { MotionDivItemsUp, MotionDivToLeft, MotionDivToRight, MotionDivToUp } from '../utils/motion';
 
 // const initialRotationLaptop = new Euler(0, -Math.PI / 7, 0);
@@ -31,6 +32,33 @@ const Projects = () => {
     let projects = [
         {
             key: 1,
+            name: "YOURBARBER - Barbershops",
+            description: "Projeto realizado para trabalho da faculdade, uma API para aplicação de barbearias. Onde as barbearias podem divulgar seus serviços e os clientes podem agendar um serviço.",
+            tech: ["reactjs", "spring", "tailwindcss", "html5", "css3", "java", "javacript"],
+            category: ["frontend", "backend"],
+            image: [BarbershopImage],
+            urls: ["","https://github.com/douglasnicida/frontend_barbershop"]
+        },
+        {
+            key: 2,
+            name: "AppNime",
+            description: "Aplicação destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles! (Em breve, link para acesso)",
+            tech: ["nextjs", "typescript", "tailwindcss", "html5", "css3"],
+            category: ["frontend"],
+            image: [AppNimeImage],
+            urls: ["","https://github.com/douglasnicida/appnime_frontend"]
+        },
+        {
+            key: 3,
+            name: "AppNime API",
+            description: "REST API para aplicação AppNime, destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles!",
+            tech: ["nestjs", "typescript"],
+            category: ["backend"],
+            image: [CodeImage],
+            urls: ["", "https://github.com/douglasnicida/appnime_backend"]
+        },
+        {
+            key: 4,
             name: "MyFilmList",
             description: "Projeto que te permite ver os detalhes dos filmes mais recentes e salvar em sua lista os favoritos.",
             tech: ["reactjs","tailwindcss","html5","css3", "javascript"],
@@ -39,40 +67,13 @@ const Projects = () => {
             urls: ["https://myfilmslist.netlify.app", "https://github.com/douglasnicida/movie-details-list-project/"]
         },
         {
-            key: 2,
-            name: "Opensea Collection Clone",
-            description: "Website clone da Opensea Mystical Wizard Guild Collection da MysticSwap.",
-            tech: ["reactjs", "nestjs", "tailwindcss", "html5", "css3", "javascript"],
-            category: ["frontend", "backend"],
-            image: [OpenSeaImage],
-            urls: ["","https://github.com/douglasnicida/opensea_nft_collection_clone"]
-        },
-        {
-            key: 3,
+            key: 5,
             name: "HBO Max Clone",
             description: "Clone do site da HBO MAX, realizado em janeiro de 2024. Totalmente responsivo, possui slider e muito mais!",
             tech: ["reactjs","tailwindcss","html5","css3","javascript"],
             category: ["frontend"],
             image: [HBOMaxImage],
             urls: ["https://hb0maxclone.netlify.app", "https://github.com/douglasnicida/hbomax_clone"]
-        },
-        {
-            key: 4,
-            name: "Barbershop API",
-            description: "Projeto realizado para trabalho da faculdade, uma API para aplicação de barbearias. Onde as barbearias podem divulgar seus serviços e os clientes podem agendar um serviço.",
-            tech: ["java", "spring"],
-            category: ["backend"],
-            image: [CodeImage],
-            urls: ["", "https://github.com/douglasnicida/api_barbershop_springboot"]
-        },
-        {
-            key: 5,
-            name: "Gestão de Loja Calçados",
-            description: "SECCOMP UNESP RC CHALLENGE WINNER- Projeto para gestão de lojas de calçados.",
-            tech: ["java"],
-            category: ["backend"],
-            image: [CodeImage],
-            urls: ["", "https://github.com/douglasnicida/seccomp-unesp-challenge-magis5"]
         },
     ]
     return ( 
@@ -127,6 +128,10 @@ const Projects = () => {
                                             icon = React_Icon
                                             break;
 
+                                        case "nextjs": 
+                                            icon = NextJS_Icon
+                                            break;
+
                                         case "nestjs": 
                                             icon = NestJS_Icon
                                             break;
@@ -145,6 +150,10 @@ const Projects = () => {
 
                                         case "javascript": 
                                             icon = Javascript_Icon
+                                            break;
+
+                                        case "typescript": 
+                                            icon = Typescript_Icon
                                             break;
 
                                         case "spring": 

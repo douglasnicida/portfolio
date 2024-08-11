@@ -52,9 +52,9 @@ const About = () => {
                 <MotionDivToLeft transition={{delay: 0.4, duration: 0.2}}>
                     <p className="text-justify w-fit max-w-[200px] sm:max-w-[450px] mt-4 md:mt-5 text-[14px] md:text-[16px]">
                         Atualmente quero ingressar no mercado de trabalho na área de Desenvolvimento Web ou Mobile. <br/>
-                        Estou cursando Ciências da Computação na UNESP, atuando como desenvolvedor voluntário em dois projetos 
+                        Estou cursando Ciência da Computação na UNESP e participei como desenvolvedor voluntário em dois projetos 
                         de bolsa de extensão da própria universidade, sendo um deles Web e outro Mobile, utilizo as tecnologias <b className="underline">ReactJS, TailWindCSS</b> para o Web 
-                        e para o Mobile utilizo <b className="underline">React Native</b>, Android SDK além de JavaScript, HTML, CSS e Firebase para ambos.
+                        e para o Mobile utilizo <b className="underline">React Native</b>, Android SDK além de JavaScript, HTML, CSS e um banco de dados único feito utilizando <b className="underline">NestJS, PostgreSQL</b>.
                     </p>
                 </MotionDivToLeft>
             </div>
