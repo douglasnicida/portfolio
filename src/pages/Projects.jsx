@@ -33,7 +33,7 @@ const Projects = () => {
         {
             key: 1,
             name: "AppNime",
-            description: "Aplicação destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles! (O primeiro carregamento após um tempo de inatividade do servidor pode causar lenttidão de até 50seg segundo o Render)",
+            description: "Aplicação destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles! (O primeiro carregamento após um tempo de inatividade do servidor pode causar lentidão de até 50seg segundo o Render)",
             tech: ["nextjs", "typescript", "tailwindcss", "html5", "css3"],
             category: ["frontend"],
             image: [AppNimeImage],
