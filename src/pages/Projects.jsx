@@ -32,30 +32,30 @@ const Projects = () => {
     let projects = [
         {
             key: 1,
-            name: "YOURBARBER - Barbershops",
-            description: "Projeto realizado para trabalho da faculdade, uma API para aplicação de barbearias. Onde as barbearias podem divulgar seus serviços e os clientes podem agendar um serviço.",
-            tech: ["reactjs", "spring", "tailwindcss", "html5", "css3", "java", "javacript"],
-            category: ["frontend", "backend"],
-            image: [BarbershopImage],
-            urls: ["","https://github.com/douglasnicida/frontend_barbershop"]
-        },
-        {
-            key: 2,
             name: "AppNime",
-            description: "Aplicação destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles! (Em breve, link para acesso)",
+            description: "Aplicação destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles! (O primeiro carregamento após um tempo de inatividade do servidor pode causar lenttidão de até 50seg segundo o Render)",
             tech: ["nextjs", "typescript", "tailwindcss", "html5", "css3"],
             category: ["frontend"],
             image: [AppNimeImage],
             urls: ["","https://github.com/douglasnicida/appnime_frontend"]
         },
         {
-            key: 3,
+            key: 2,
             name: "AppNime API",
             description: "REST API para aplicação AppNime, destinada a ajudar os fãs de anime na organização dos seus animes favoritos e ficar por dentro dos adicionados recentemente, podendo dar nota à eles!",
             tech: ["nestjs", "typescript"],
             category: ["backend"],
             image: [CodeImage],
-            urls: ["", "https://github.com/douglasnicida/appnime_backend"]
+            urls: ["https://appnime.netlify.app/", "https://github.com/douglasnicida/appnime_backend"]
+        },
+        {
+            key: 3,
+            name: "YOURBARBER - Barbershops",
+            description: "Projeto realizado para trabalho da faculdade, uma API para aplicação de barbearias. Onde as barbearias podem divulgar seus serviços e os clientes podem agendar um serviço.",
+            tech: ["reactjs", "spring", "tailwindcss", "html5", "css3", "java", "javacript"],
+            category: ["frontend", "backend"],
+            image: [BarbershopImage],
+            urls: ["","https://github.com/douglasnicida/frontend_barbershop"]
         },
         {
             key: 4,
