@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { skills } from "../utils/content";
 
-import Filter from "../assets/Filter.svg?react"
+import Filter from "../assets/Filter.svg?react";
 import { MotionDivItemsDown, MotionDivToDown, MotionDivToRight } from "../utils/motion";
 
 const SkillItem = ({icon, handleHover}) => {
@@ -12,23 +12,38 @@ const SkillItem = ({icon, handleHover}) => {
                 {icon}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const Skills = () => {
-    const name = "ReactJS"
-    const desc = "O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web."
+    const name = "ReactJS";
+    const desc = "O React é uma biblioteca front-end JavaScript de código aberto com foco em criar interfaces de usuário em páginas web.";
 
     const [skillName, setSkillName] = useState(name);
     const [skillDescription, setSkillDescription] = useState(desc);
-    const [skillDataSet , setSkillDataSet] = useState(skills);
-
+    const [skillDataSet, setSkillDataSet] = useState(skills);
+    const [currentPage, setCurrentPage] = useState(1);
     const [toggleMenu, setToggleMenu] = useState(false);
 
+    const menuRef = useRef(null);
+
+    const itemsPerPage = 16;
+    const totalPages = Math.ceil(skillDataSet.length / itemsPerPage);
+
     const handleFilter = (text) => {
-        setSkillDataSet(skills.filter(skill => skill.category === text))
-    }
-    
+        if (text === "todos") {
+            setSkillDataSet(skills);
+        } else {
+            setSkillDataSet(skills.filter(skill => skill.category === text));
+        }
+        setCurrentPage(1);
+    };
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
+    const currentSkills = skillDataSet.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
     const MenuItem = ({text, className}) => {
         return(
@@ -39,7 +54,20 @@ const Skills = () => {
                 <span className="absolute -bottom-0 left-0 w-0 h-[3px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span>
             </li>
         );
-    }
+    };
+
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setToggleMenu(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     return ( 
     <div className="relative">
@@ -76,17 +104,30 @@ const Skills = () => {
                 <div className="flex flex-col gap-y-5">
                     {/* SKILLS */}
                     <div className="grid grid-rows-4 grid-cols-4 gap-6">
-                        {skillDataSet.map(skill => {
+                        {currentSkills.map((skill, index) => {
                             return (
-                                <MotionDivItemsDown i={skill.key} transition={{ duration: 0.2, delay: skill.key * 0.1}} key={skill.key}>
+                                <MotionDivItemsDown i={skill.key} transition={{ duration: 0.2, delay: index * 0.1}} key={skill.key}>
                                     <SkillItem icon={skill.icon} key={skill.key} handleHover={() => {setSkillName(skill.name); setSkillDescription(skill.description);}}/>
                                 </MotionDivItemsDown>
-                            )
+                            );
                         })}
                     </div>
 
+                    {/* PAGINATION */}
+                    <div className="flex justify-center mt-4">
+                        {Array.from({ length: totalPages }, (_, index) => (
+                            <button
+                                key={index + 1}
+                                className={`mx-1 w-9 py-1 rounded ${currentPage === index + 1 ? 'bg-myRed text-white' : 'bg-gray-200'}`}
+                                onClick={() => handlePageChange(index + 1)}
+                            >
+                                {index + 1}
+                            </button>
+                        ))}
+                    </div>
+
                     {/* FILTER */}
-                    <div className="flex justify-center w-full items-center gap-x-5 h-[50px]">
+                    <div className="flex justify-center w-full items-center gap-x-5 h-[50px] mt-2">
                         <div className="w-full h-[1px] bg-introDetails" />
                         <button className={`p-[9px] rounded-full border-[2px] dark:border-containerLight border-containerDark relative flex justify-center items-center ${toggleMenu && "focus:p-[14px]"} hover:p-[14px] transition-all duration-300 ease-in-out`} 
                         onClick={() => { setSkillDataSet(skills); setToggleMenu(!toggleMenu);}}>
@@ -106,17 +147,18 @@ const Skills = () => {
 
         {/* FILTER MENU */}
         <div className="w-full h-fit flex justify-center items-center lg:justify-start">
-            <div className={`absolute ${(toggleMenu) ? "scale-100" : "lg:w-0 scale-0"} h-[50px] w-fit lg:w-[300px] lg:h-3/5 lg:left-[50px] bottom-[10%] px-[15px] py-[18px] lg:px-[0] lg:py-[0] lg:top-[25%] z-[60] bg-black transition-all duration-500 ease-in-out rounded-lg`}>
+            <div ref={menuRef} className={`absolute ${(toggleMenu) ? "scale-100" : "lg:w-0 scale-0"} h-[50px] w-fit lg:w-[300px] lg:h-3/5 lg:left-[50px] bottom-[10%] px-[15px] py-[18px] lg:px-[0] lg:py-[0] lg:top-[25%] z-[60] bg-black transition-all duration-500 ease-in-out rounded-lg`}>
                 <ul className="flex lg:flex-col w-full h-full gap-x-3 lg:gap-x-7 text-headerItems font-medium items-center justify-center gap-y-10 lg:pb-32 lg:pt-9 lg:mt-0 mt-1">
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="todos" />
                     <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="frontend" />
                     <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="backend" />
                     <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="tools" />
-                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="other" />
+                    <MenuItem className={`${(!toggleMenu) ? 'hidden' : 'flex'}`} text="outros" />
                 </ul>
             </div>
         </div>
     </div>
      );
-}
+};
  
 export default Skills;

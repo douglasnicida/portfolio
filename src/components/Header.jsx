@@ -28,7 +28,7 @@ const Header = () => {
     const HeaderItem = ({name, text, className}) => {
         return(
             <li className={`mb-2 sm:mb-0 font-Syne flex flex-col group relative w-[87px] text-center ${className}`}>
-                <Link to={name} spy={true} smooth={true} offset={-50} duration={500} className="cursor-pointer font-Syne hover:font-bold text-[17px]">
+                <Link to={name} spy={true} smooth={true} offset={name === 'about' ? -150 : -50} duration={500} className="cursor-pointer font-Syne hover:font-bold text-[17px]">
                     {text}
                 </Link>
                 <span className="absolute -bottom-0 left-0 w-0 h-[3px] rounded-full bg-myRed transition-all duration-500 group-hover:w-full"></span>

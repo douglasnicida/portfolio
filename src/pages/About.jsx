@@ -51,17 +51,18 @@ const About = () => {
                 {/* TEXT */}
                 <MotionDivToLeft transition={{delay: 0.4, duration: 0.2}}>
                     <p className="text-justify w-fit max-w-[200px] sm:max-w-[450px] mt-4 md:mt-5 text-[14px] md:text-[16px]">
-                        Atualmente quero ingressar no mercado de trabalho na área de Desenvolvimento Web ou Mobile. <br/>
-                        Estou cursando Ciência da Computação na UNESP e participei como desenvolvedor voluntário em dois projetos 
-                        de bolsa de extensão da própria universidade, sendo um deles Web e outro Mobile, utilizo as tecnologias <b className="underline">ReactJS, TailWindCSS</b> para o Web 
-                        e para o Mobile utilizo <b className="underline">React Native</b>, Android SDK além de JavaScript, HTML, CSS e um banco de dados único feito utilizando <b className="underline">NestJS, PostgreSQL</b>.
+                    Atualmente cursando Ciências da Computação na UNESP. <br /> Desenvolvedor FullStack especializado em <b className="underline">ReactJS, NodeJS, Fastify, NestJS, TypeScript e JavaScript</b>, 
+                    além de experiência com bancos de dados relacionais e não relacionais. Focado em desenvolver soluções escaláveis, estruturadas e 
+                    de fácil manutenção, garantindo alto desempenho e aderência às melhores práticas do mercado. <br />
+                    Com projetos que fui fazendo ao decorrer da faculdade e em projetos profissionais, possuo sólida capacidade de adaptação a diferentes 
+                    stacks, transitando entre tecnologias modernas e legadas conforme necessário.
                     </p>
                 </MotionDivToLeft>
             </div>
         </div>
 
     return ( 
-        <div className="flex flex-col relative min-h-[100vh] h-auto w-full md:w-full sm:p-responsiveLayout md:p-layout justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10">
+        <div className="flex flex-col relative min-h-[100vh] h-auto w-full md:w-full sm:p-responsiveLayout  justify-center items-center text-backgroundDark bg-backgroundLight dark:text-backgroundLight dark:bg-backgroundDark z-10">
                 {/* CONTENT */}
                 <div className="mt-5 md:mt-20" id="about">
                     <Container isAbout={true} children={content}/>

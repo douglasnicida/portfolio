@@ -4,7 +4,7 @@ import CodeImage from '../assets/code.png'
 import BarbershopImage from '../assets/yourbarber.png'
 import AppNimeImage from '../assets/appnime.png'
 import Button from '../components/Button';
-import { React_Icon, TailWindCSS_Icon, CSS3_Icon, HTML5_Icon, Javascript_Icon, Java_Icon, Spring_Icon, NestJS_Icon, NextJS_Icon, Typescript_Icon } from '../utils/content';
+import { React_Icon, TailWindCSS_Icon, CSS3_Icon, HTML5_Icon, Javascript_Icon, Java_Icon, Spring_Icon, NestJS_Icon, NextJS_Icon, Typescript_Icon, Fastify_Icon } from '../utils/content';
 import { MotionDivItemsUp, MotionDivToLeft, MotionDivToRight, MotionDivToUp } from '../utils/motion';
 
 // const initialRotationLaptop = new Euler(0, -Math.PI / 7, 0);
@@ -134,6 +134,10 @@ const Projects = () => {
 
                                         case "nestjs": 
                                             icon = NestJS_Icon
+                                            break;
+
+                                        case "fastify":
+                                            icon = Fastify_Icon
                                             break;
 
                                         case "html5": 

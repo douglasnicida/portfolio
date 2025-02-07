@@ -20,6 +20,8 @@ import JavaIcon from '../assets/Java.svg?react';
 import LinuxIcon  from '../assets/linux-svgrepo-com 1.svg?react';
 import SpringIcon from '../assets/SpringIcon.svg?react';
 import NextJSIcon from '../assets/nextjs-icon-svgrepo-com.svg?react';
+import FastifyIcon from '../assets/fastify.svg?react';
+import MongoDBIcon from '../assets/mongodb-icon.svg?react'; // Import MongoDB icon
 
 export const React_Icon =  <ReactIcon className='size-[35px]' />
 export const NodeJS_Icon =  <NodeJSIcon className='size-[35px]' />
@@ -37,8 +39,9 @@ export const CSS3_Icon =  <CSS3Icon className='size-[35px] fill-myRed' />
 export const Javascript_Icon =  <JavascriptIcon className='size-[35px]' />
 export const Java_Icon =  <JavaIcon className='size-[35px] fill-myRed' />
 export const NextJS_Icon =  <NextJSIcon className='size-[32px] fill-myRed' />
+export const Fastify_Icon =  <FastifyIcon className='size-[32px] fill-myRed' />
 export const Spring_Icon =  <SpringIcon className='size-[35px] stroke-myRed fill-transparent' />
-
+export const MongoDB_Icon =  <MongoDBIcon className='size-[35px]' /> // MongoDB icon
 
 export const skills = [
     {
@@ -57,107 +60,120 @@ export const skills = [
     },
     {
         key: 3,
+        name: "Fastify",
+        description: "Fastify é um framework web rápido e de baixo overhead para Node.js.",
+        icon: <FastifyIcon className='size-[45px] md:size-[50px] fill-myRed'/>,
+        category: "backend"
+    },
+    {
+        key: 4,
         name: "NestJS",
         description: "Nest (NestJS) é um framework para construir aplicativos eficientes, escaláveis e confiáveis em Node.js.",
         icon: <NestJSIcon className='size-[45px] md:size-[50px]' />,
         category: "backend"
     },
     {
-        key: 4,
+        key: 5,
         name: "TailWindCSS",
         description: "Tailwind CSS é um framework de utilitários CSS de baixo nível para construir interfaces de usuário customizáveis.",
         icon: <TailWindCSSIcon className='size-[45px] md:size-[50px]' />,
         category: "frontend"
     },
     {
-        key: 5,
+        key: 6,
         name: "Typescript",
         description: "TypeScript é uma linguagem de programação de código aberto que é um superconjunto tipado de JavaScript.",
         icon: <TypescriptIcon className='size-[45px] md:size-[50px]' />,
         category: "frontend"
     },
     {
-        key: 6,
+        key: 7,
         name: "PrismaJS",
         description: "Prisma é uma camada de banco de dados moderna e de alto desempenho para Node.js e TypeScript.",
         icon: <PrismaJSIcon className='size-[45px] md:size-[50px]' />,
         category: "backend"
     },
     {
-        key: 7,
+        key: 8,
         name: "PostgreSQL",
         description: "PostgreSQL é um sistema de gerenciamento de banco de dados relacional de código aberto e avançado.",
         icon: <PostgreSQLIcon className='size-[45px] md:size-[50px]' />,
         category: "backend"
     },
     {
-        key: 8,
+        key: 9,
         name: "MySQL",
         description: "MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto.",
         icon: <MySQLIcon className='size-[45px] md:size-[50px]' />,
         category: "backend"
     },
     {
-        key: 9,
+        key: 10,
+        name: "MongoDB",
+        description: "MongoDB é um banco de dados NoSQL orientado a documentos, conhecido por sua escalabilidade e flexibilidade.",
+        icon: <MongoDBIcon className='size-[55px] md:size-[60px] fill-myRed' />,
+        category: "backend"
+    },
+    {
+        key: 11,
         name: "Github",
         description: "GitHub é uma plataforma de hospedagem de código-fonte e controle de versão usando o Git.",
         icon: <GithubIcon className='size-[45px] md:size-[50px] fill-myRed' />,
         category: "tools"
     },
     {
-        key: 10,
+        key: 12,
         name: "Figma",
         description: "Figma é uma ferramenta de design de interface do usuário baseada em navegador.",
         icon: <FigmaIcon className='size-[45px] md:size-[50px]' />,
         category: "tools"
     },
     {
-        key: 11,
+        key: 13,
         name: "Photoshop",
         description: "Adobe Photoshop é um software de edição de imagens desenvolvido pela Adobe.",
         icon: <PhotoshopIcon className='size-[45px] md:size-[50px]' />,
         category: "tools"
     },
     {
-        key: 12,
+        key: 14,
         name: "HTML5",
         description: "HTML5 é a última versão da linguagem de marcação padrão para documentos da World Wide Web.",
         icon: <HTML5Icon className='size-[45px] md:size-[50px] fill-myRed'/>,
         category: "frontend"
     },
     {
-        key: 13,
+        key: 15,
         name: "CSS3",
         description: "CSS3 é a última evolução do padrão CSS, usado para estilizar elementos HTML.",
         icon: <CSS3Icon className='size-[46px] fill-myRed' />,
         category: "frontend"
     },
     {
-        key: 14,
+        key: 16,
         name: "Javascript",
         description: "JavaScript é uma linguagem de programação de alto nível, interpretada e de script comumente usada para criar páginas web interativas.",
-        icon: <JavascriptIcon className='size-[45px] md:size-[50px]' />,
+        icon: <JavascriptIcon className='size-[35px] md:size-[40px]' />,
         category: "frontend"
     },
     {
-        key: 15,
+        key: 17,
         name: "Java",
         description: "Java é uma linguagem de programação de propósito geral, concorrente, orientada a objetos, com forte segurança.",
         icon: <JavaIcon className='size-[45px] md:size-[50px] fill-myRed' />,
         category: "backend"
     },
     {
-        key: 16,
+        key: 18,
         name: "Linux",
         description: "Linux é um sistema operacional de código aberto baseado no kernel Linux.",
         icon: <LinuxIcon className='size-[45px] md:size-[50px]' />,
-        category: "other"
+        category: "outros"
     }
 ];
-
 
 export const items = [
     {key: 1, icon:<Development className="size-12 fill-myRed" />, title: "Desenvolvimento", text:"Desenvolvo sites profissionais como: blogs, portfólios, landing pages, e-commerce, dashboard e muito mais!"},
     {key: 2, icon:<Design className="size-14" />, title: "UI Design", text: "Desenho interfaces objetivas, bonitas, responsivas e principalmente intuitivas para o usuário."},
     {key: 3, icon:<Backend className="size-14" />, title: "Frontend / Backend", text: "Criação e planejamento da aplicação como um todo, desde seu banco de dados, servidor até a interface."}
-]
+];

@@ -16,7 +16,7 @@ export default {
       },
 
       backgroundImage: {
-        me: "url('/src/assets/me.jpg')",
+        me: "url('/src/assets/me.png')",
         meAI: "url('/src/assets/meAI.png')",
       },
     },
